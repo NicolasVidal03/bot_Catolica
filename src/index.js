@@ -8,8 +8,13 @@ const genero = document.querySelector("#select-genero");
 var hora = new Date();
 
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", (event) =>  {
     event.preventDefault();
+
+    if(nombre.value=="" || edad.value ==""){
+        alert("Faltan Datos!!");
+        return 0;
+    }
 
     let saludar = new String;
     const now = hora.toLocaleTimeString();
