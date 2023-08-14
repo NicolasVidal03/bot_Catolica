@@ -5,24 +5,44 @@ const edad = document.querySelector("#input-edad");
 const form = document.querySelector("#form-saludo");
 const saludo = document.querySelector("#saludo");
 const genero = document.querySelector("#select-genero");
+var hora = new Date();
 
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    let x = "";
+
+    let saludar = new String;
+    const now = hora.toLocaleTimeString();
+
+    if(now >= "12:00:00" && now < "19:00:00")
+    {
+        saludar = "Buenas tardes ";
+    }
+    else{
+        if(now >= "6:00:00"){
+            saludar = "Buenos días ";
+        }
+        else{
+            saludar = "Buenas noches ";
+        }
+    }
 
     if(edad.value >= 30){
-        x = "Sr. ";
         if(genero.value == "F"){
-            x = "Sra. ";
+            saludar = saludar + "Sra. ";
+        }
+        else{
+            saludar = saludar + "Sr. ";
         }
     }
     else{
-        x = "joven ";
         if(genero.value == "F"){
-            x = "Srta. ";
+            saludar = saludar + "Srta. ";
+        }
+        else{
+            saludar = saludar + "joven ";
         }
     }
 
-    saludo.innerHTML = "<p>Hola " + x + nombre.value + ", como está?</p>";
+    saludo.innerHTML = "<p>" + saludar + nombre.value + ", como está?</p>";
 });
