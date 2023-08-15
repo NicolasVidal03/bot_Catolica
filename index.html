@@ -1,14 +1,17 @@
 <html>
   <body>
+      <button id="lang" value="es">Español</button>
+      <button id="lang" value="eng">English</button>
+
     <form id="form-saludo" action="submit">
       <input id="input-nombre" type="text" name="nombre" placeholder="Ingresa tu nombre">
       <input id="input-edad" type="number" name="edad" placeholder="Ingresa tu edad">
-      <span>Seleccione su genero: </span>
+      <span id="span-genero">Seleccione su genero: </span>
       <select id="select-genero" name="genero">
         <option value="F">F</option>
         <option value="M">M</option>
       </select>
-      <input id="boton-nombre" type="submit" value="Siguiente">
+      <input id="boton-siguiente" type="submit" value="Siguiente">
     </form>
 
     <div id="saludo" style="font-weight: 1000;">
